@@ -1,0 +1,97 @@
+GIT F, PULL, PUSH:
+git clone https://github.com/<your-username>/<repo-name>.git
+git branch
+git checkout -b feature-branch
+git add .
+git commit -m "Updated files"
+git push origin feature-branch
+git fetch origin
+git checkout main
+git merge origin/feature-branch
+git pull origin main
+
+DOCKER:
+docker --version
+docker info
+docker images
+docker ps
+docker ps -a
+docker pull ubuntu
+docker run -it ubuntu
+docker run -d ubuntu
+docker run -d --name mycontainer ubuntu
+docker stop <container_id>
+docker start <container_id>
+docker restart <container_id>
+docker rm <container_id>
+docker container prune
+docker rmi <image_id>
+docker build -t myimage .
+docker run -d -p 8080:80 myimage
+docker logs <container_id>
+docker exec -it <container_id> bash
+docker cp file.txt <container_id>:/root/
+docker cp <container_id>:/root/file.txt .
+docker stats
+docker inspect <container_id>
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+docker rmi $(docker images -q)
+docker system prune -a
+
+LINUX:
+1. pwd
+2. ls
+3. cd
+4. mkdir test_folder
+5. rmdir test_folder
+6. touch file1.txt
+7. cat file1.txt
+8. echo "Hello Linux" > file1.txt
+9. cp file1.txt copy_file.txt
+10. mv copy_file.txt moved_file.txt
+11. rm moved_file.txt
+12. clear
+13. whoami
+14. date
+15. uname -a
+16. df -h
+17. du -sh
+18. ps
+19. top
+20. man ls
+
+GIT:
+
+1. git init
+2. git config --global user.name "YourName"
+3. git config --global user.email "youremail@example.com"
+4. git status
+5. git add .
+6. git commit -m "Initial commit"
+7. git log
+8. git branch
+9. git branch new-feature
+10. git checkout new-feature
+11. git merge new-feature
+12. git remote add origin https://github.com/YourUsername/practical.git
+13. git push -u origin master
+14. git pull origin master
+15. git fetch origin
+16. git diff
+17. git reset --soft HEAD~1
+18. git rm file.txt
+19. git stash
+20. git clone https://github.com/YourUsername/practical.git
+
+WB HOK: 
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+
+scoop bucket add hookdeck https://github.com/hookdeck/scoop-hookdeck-cli.git
+
+scoop install hookdeck
+hookdeck listen 8080
+
