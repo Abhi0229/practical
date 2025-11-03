@@ -1,0 +1,58 @@
+CREATE JENKINS PIPLINE:
+
+
+CODE:
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+            }
+        }
+    }
+}
+
+integration jenkins with GitHub:
+
+# In Jenkins → Manage Plugins → install "GitHub Integration Plugin"
+# Configure Git in Jenkins Global Tool Configuration
+# Create Freestyle project → Source Code Management → Git
+# Add repository URL
+# Add GitHub webhook: https://<your_jenkins_url>/github-webhook/
+
+integration with docker
+# Install Docker plugin in Jenkins
+# In Jenkins node, install Docker engine
+# In Jenkinsfile:
+pipeline {
+    agent any
+    stages {
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    sh 'docker build -t myapp .'
+                }
+            }
+        }
+        stage('Run Docker Container') {
+            steps {
+                script {
+                    sh 'docker run -d -p 8080:80 myapp'
+                }
+            }
+        }
+    }
+}
+
+
